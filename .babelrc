@@ -5,5 +5,11 @@
   ],
   "plugins": [
     "syntax-dynamic-import",
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "@": "./src"
+      }
+    }]
   ]
 }
