@@ -1,9 +1,9 @@
 <template>
 <div class="MainLayout app-main-layout">
     <nav class="MainLayout__header navbar brown">
-        <div class="navbar-left">
-            <a href="#"> <i class="material-icons white-text">dehaze</i> </a>
-            <span class="white-text">12.12.12</span>
+        <div class="MainLayout__header-left">
+            <a href="#"> <i class="material-icons">dehaze</i> </a>
+            <span class="MainLayout__header-time">12.12.12</span>
         </div>
 
         <ul class="right hide-on-small-and-down">
@@ -34,7 +34,7 @@
             </ul>
     </nav>
 
-    <ul class="MainLayout__sidebar brown">
+    <ul class="MainLayout__sidebar open brown">
         <li> <a href="#" class="waves-effect waves-brown pointer MainLayout__sidebar-item">Счет</a> </li>
         <li> <a href="#" class="waves-effect waves-brown pointer MainLayout__sidebar-item">История</a> </li>
         <li> <a href="#" class="waves-effect waves-brown pointer MainLayout__sidebar-item">Планирование</a> </li>
@@ -42,7 +42,7 @@
         <li> <a href="#" class="waves-effect waves-brown pointer MainLayout__sidebar-item">Категории</a> </li>
     </ul>
 
-    <main class="app-content">
+    <main class="MainLayout__main offset">
         <div class="app-page">
             <router-view/>
         </div>
@@ -61,12 +61,23 @@
 .MainLayout {
     &__header {
         display: flex;
+        position: fixed;
         justify-content: space-between;
         padding: 0 15px;
+        z-index: 1000;
+
+        &-left {
+            display: flex;
+            align-items: center
+        }
+
+        &-time {
+            margin-left: 1rem;
+        }
     }
 
     &__sidebar {
-        position: absolute;
+        position: fixed;
         color: #fff;
         top: 49px;
         bottom: 0;
@@ -77,12 +88,27 @@
         padding-right: 40px;
         z-index: 2;
         box-shadow: 2px 2px 2px 0 #c7c4c4;
+        transform: translateX(-100%);
+        transition: .3s;
 
         &-item {
             color: #fff;
             padding: 10px 15px;
             display: block;
+        }
 
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    &__main {
+        padding: 64px 100px 0 100px;
+        transition: padding-left .3s;
+        position: relative;
+
+        &.offset {
+            padding: 64px 10px 0 200px;
         }
     }
 }

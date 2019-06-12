@@ -10,16 +10,14 @@
                 <input id="password" type="password" class="validate">
                 <label for="password">Пароль</label>
             </div>
-            <button class="btn waves-effect waves-light auth-submit" type="submit">
+            <button class="btn brown waves-effect waves-light auth-submit" type="submit">
                 Войти
                 <i class="material-icons right">send</i>
             </button>
         </div>
-        <div class="card-action center-align">
-            <div>
-                Нет аккаунта?
-                <a href="/">Зарегистрироваться</a>
-            </div>
+        <div class="card-action center">
+            Нет аккаунта?
+            <a href="/" class="Login__link brown-text">Зарегистрироваться</a>
         </div>
     </form>
 </template>
@@ -41,6 +39,10 @@
             margin-bottom: 2rem;
             text-align: center;
             text-shadow: 0 1px 10px #dcdcdc;
+        }
+
+        &__link {
+            font-weight: 500;
         }
     }
 </style>
