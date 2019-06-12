@@ -61,7 +61,7 @@ export default {
         z-index: 2;
         box-shadow: 2px 2px 2px 0 #c7c4c4;
         transform: translateX(-100%);
-        transition: .3s;
+        transition: .4s;
 
         &__item {
             color: #fff;
