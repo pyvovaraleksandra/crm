@@ -51,7 +51,7 @@ export default {
     .Sidebar {
         position: fixed;
         color: #fff;
-        top: 49px;
+        top: 40px;
         bottom: 0;
         width: 13%;
         min-height: 100vh;

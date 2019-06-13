@@ -11,7 +11,7 @@
     </main>
 
     <div class="fixed-action-btn">
-        <router-link class="btn-floating btn-large brown darken-2" to="/new-record">
+        <router-link class="btn-floating btn-large cyan darken-1" to="/new-record">
             <i class="large material-icons">add</i>
         </router-link>
     </div>
