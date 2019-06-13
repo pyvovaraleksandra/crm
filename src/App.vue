@@ -17,14 +17,16 @@ export default {
     },
     computed: {
         layout() {
-            return `${this.$route.meta.layout}Layout`;
+            const layoutName = this.$route.meta.layout;
+            return layoutName ? `${layoutName}Layout` : "";
         }
     }
 }
 </script>
 
 <style lang="scss">
-    @import '~materialize-css/dist/css/materialize.min.css';
-    @import 'assets/index.css';
+    //@import '~materialize-css/dist/css/materialize.min.css';
+    @import '~materialize-css/sass/materialize';
+    @import 'assets/index';
 </style>
 

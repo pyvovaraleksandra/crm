@@ -27,7 +27,7 @@
         </div>
         <div class="card-action center">
             Уже есть аккаунт?
-            <a href="/" class="Register__link brown-text">Войти!</a>
+            <router-link to="/login" class="Register__link brown-text">Войти!</router-link>
         </div>
     </form>
 </template>

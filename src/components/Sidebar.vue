@@ -1,15 +1,15 @@
 <template>
-    <ul class="Sidebar brown" :class="{open: isOpen}">
+    <ul class="Sidebar blue-grey" :class="{open: isOpen}">
         <router-link
             v-for="link in links"
             tag="li"
-            active-class="active"
+            active-class="active blue-grey darken-2"
             :key="link.url"
             :to="link.url"
             :exact="link.exact"
             class="Sidebar__link"
         >
-            <a href="#" class="waves-effect waves-brown pointer Sidebar__item">{{ link.title }}</a>
+            <a href="#" class="waves-effect pointer Sidebar__item">{{ link.title }}</a>
         </router-link>
     </ul>
 </template>
@@ -73,12 +73,12 @@ export default {
             transition: .3s;
 
             &:hover {
-                background: #6d4c41;
+                background: #546e7a;
+                border-radius: 0 5px 5px 0;
             }
 
             &.active {
                 border-radius: 0 5px 5px 0;
-                background: #5d4037;
             }
         }
 
