@@ -33,7 +33,7 @@
                 <input
                     id="name"
                     type="text"
-                    v-model.trim="password"
+                    v-model.trim="name"
                     :class="{'invalid': notValidName}"
                 >
                 <label for="name">Имя</label>
@@ -41,14 +41,13 @@
                     <template v-if="$v.name.$dirty && !$v.name.required">Введите имя</template>
                 </small>
             </div>
-
-
             <div class="Register__agreement">
                 <label class="">
-                    <input type="checkbox" />
+                    <input type="checkbox" v-model="agreement"/>
                     <span class="Register__agreement-tick">С правилами согласен</span>
                 </label>
             </div>
+
             <button class="btn waves-effect waves-light auth-submit" type="submit">
                 Зарегистрироваться
                 <i class="material-icons right">send</i>
@@ -70,6 +69,7 @@ export default {
         email: "",
         password: "",
         name: "",
+        agreement: "",
     }),
     computed: {
         notValidEmail() {
@@ -89,7 +89,7 @@ export default {
     },
     methods: {
         submitHandler() {
-            if (this.$v.$invalid) {
+            if (this.$v.$invalid || !this.agreement) {
                 this.$v.$touch();
                 return;
             }

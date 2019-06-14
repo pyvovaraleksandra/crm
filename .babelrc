@@ -5,6 +5,7 @@
   ],
   "plugins": [
     "syntax-dynamic-import",
+    "transform-regenerator",
     ["module-resolver", {
       "root": ["./src"],
       "alias": {
@@ -13,3 +14,4 @@
     }]
   ]
 }
+

@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import messages from '@/utils/messages.js'
 
 export default {
     name: "Login",
@@ -41,18 +42,29 @@ export default {
         password: "",
     }),
     methods: {
-        submitHandler() {
+        async submitHandler() {
             // if (this.$v.$invalid) {
             //     this.$v.$touch();
             //     return;
             // }
             //
-            // const FormData = {
-            //     email: this.email,
-            //     password: this.password,
-            // };
+            const formData = {
+                email: this.email,
+                password: this.password,
+            };
 
-            this.$router.push("/");
+            try {
+                await this.$store.dispatch("login", formData);
+                this.$router.push("/");
+            } catch(e) {}
+        }
+    },
+    mounted() {
+        const queryMessage = this.$route.query.message;
+        const message = messages[queryMessage];
+
+        if (message) {
+            this.$message(message)
         }
     }
 }

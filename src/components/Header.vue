@@ -29,7 +29,7 @@ export default {
             {
                 title: "Выйти",
                 icon: "assignment_return",
-                url: "/login"
+                url: "/login?message=logout"
             }
         ]
     }),
