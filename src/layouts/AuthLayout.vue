@@ -4,6 +4,24 @@
     </div>
 </template>
 
+<script>
+import messages from "@/utils/messages";
+
+export default {
+    computed: {
+        error() {
+            return this.$store.getters.error;
+        }
+    },
+    watch: {
+        error(error) {
+            console.error(error);
+            this.$error(messages[error.code]);
+        }
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 .AuthLayout {
     min-height: 100vh;

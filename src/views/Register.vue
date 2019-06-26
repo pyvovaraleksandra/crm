@@ -88,18 +88,24 @@ export default {
         name: { required },
     },
     methods: {
-        submitHandler() {
+        async submitHandler() {
             if (this.$v.$invalid || !this.agreement) {
                 this.$v.$touch();
                 return;
             }
 
-            const FormData = {
+            const formData = {
                 email: this.email,
                 password: this.password,
+                name: this.name,
             };
 
-            this.$router.push("/");
+            try {
+                await this.$store.dispatch("register", formData);
+                this.$router.push("/");
+            } catch (e) {}
+
+
         }
     }
 }
